@@ -1,7 +1,7 @@
 {
   "name": "yb-1-intro-to-jquery",
   "version": "1.0.0",
-  "description": "",
+  "description": "Intro to jQuery Yoobee Class",
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^3.3.7",
