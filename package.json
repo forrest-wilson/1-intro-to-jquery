@@ -4,8 +4,7 @@
   "description": "Intro to jQuery Yoobee Class",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1"
+    "bootstrap": "^3.3.7"
   },
   "devDependencies": {},
   "scripts": {
