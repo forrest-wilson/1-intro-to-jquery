@@ -1,0 +1,23 @@
+{
+  "name": "yb-1-intro-to-jquery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forrest-wilson/yb-1-intro-to-jquery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/forrest-wilson/yb-1-intro-to-jquery/issues"
+  },
+  "homepage": "https://github.com/forrest-wilson/yb-1-intro-to-jquery#readme"
+}
