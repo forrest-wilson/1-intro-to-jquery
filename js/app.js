@@ -104,9 +104,9 @@ $(document).ready(function() {
 
     var person = {
         firstName: "Forrest",
-        lastName: "Wilson",
+        lastName: "Wilson-Jennings",
         age: 21,
-        location: "Wellington",
+        location: "Paraparaumu",
         fullName: function() {
             return this.firstName + " " + this.lastName;
         },
@@ -121,5 +121,5 @@ $(document).ready(function() {
         }
     }
 
-    console.log(person.description());
+    document.getElementById("personDescription").textContent = person.description();
 });
