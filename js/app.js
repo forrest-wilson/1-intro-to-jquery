@@ -1,7 +1,12 @@
 $(document).ready(function() {
+
+    // DAY 1
+
     $("#clickableButton").click(function() {
         $("#theId").toggle(500);
     });
+
+    // DAY 2
 
     $("#box1 button").click(function() {
         $("#box1").css({
@@ -26,6 +31,22 @@ $(document).ready(function() {
             "top": "0"
         });
     }, function() {
-        alert("WHAT'S GOING ON!");
+        console.log("WHAT'S GOING ON!");
     });
+
+    // DAY 3
+
+    var price,
+        quantity,
+        total;
+
+    price = 5;
+    quantity = 14;
+
+    total = price * quantity;
+
+    var el = document.getElementById("cost");
+    el.textContent = "$" + total;
+
+    console.log(total);
 });
