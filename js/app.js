@@ -98,4 +98,28 @@ $(document).ready(function() {
     d = a + b + c;
 
     console.log(d);
+
+    // Objects
+    console.log(window);
+
+    var person = {
+        firstName: "Forrest",
+        lastName: "Wilson",
+        age: 21,
+        location: "Wellington",
+        fullName: function() {
+            return this.firstName + " " + this.lastName;
+        },
+        description: function() {
+            return "Hello! My name is "
+                    + this.fullName()
+                    + ". I am "
+                    + this.age
+                    + " years old and live in "
+                    + this.location
+                    + ".";
+        }
+    }
+
+    console.log(person.description());
 });
