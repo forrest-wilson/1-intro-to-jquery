@@ -74,8 +74,28 @@ $(document).ready(function() {
     console.log(cookiesArray[3][0]);
     console.dir(cookiesArray.length);
 
+    // String concatenation
     var aString = "Hello",
-        bString = "world!";
+        bString = "world!",
+        c = 'I\m ',
+        d = 'Forrest!',
+        e = c + d;
 
-    console.log(aString + " " + bString);
+    console.log(aString + " " + bString + " " + e);
+
+    // Logical operators
+    console.log(10 + 5);
+    console.log(10 - 5);
+    console.log(10 / 5);
+    console.log(10 % 3);
+
+    // String concatenation Exercise
+    var a, b, c, d;
+
+    a = '"It is not the strongest of its species,';
+    b = ' nor the most intelligent,';
+    c = ' but the one most responsive to change."';
+    d = a + b + c;
+
+    console.log(d);
 });
