@@ -2,12 +2,22 @@
     box-sizing: border-box;
 }
 
+section {
+    padding-bottom: 25px!important;
+}
+
 .container {
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
+}
+
+.title {
+    display: block;
+    font-size: 40px;
+    text-decoration: underline;
 }
 
 .box {
@@ -61,4 +71,9 @@ button {
 .add-border {
     border-radius: 50%;
     width: 250px;
+}
+
+.cost-paragraph {
+    font-size: 30px;
+    display: block;
 }
