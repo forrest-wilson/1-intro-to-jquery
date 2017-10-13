@@ -31,22 +31,45 @@ $(document).ready(function() {
             "top": "0"
         });
     }, function() {
-        console.log("WHAT'S GOING ON!");
+        $(this).css({
+            "height": "50%",
+            "width": "50%"
+        });
     });
 
     // DAY 3
 
+    // Variable declaration
     var price,
         quantity,
         total;
 
+    // Variable assignment
     price = 5;
     quantity = 14;
 
+    console.log(typeof price);
+
+    // Math
     total = price * quantity;
 
+    // Get element and set the text to "$" plus the total
     var el = document.getElementById("cost");
     el.textContent = "$" + total;
 
-    console.log(total);
+    // Change the variable data type to object for logging
+    total = {key: "value"}
+
+    // Logs the data type
+    console.log(typeof total);
+
+
+    // Arrays
+    var arrayOfValues = [1, 2, 3, 4, {key: "value"}, [1, 2, 3, 4]];
+
+    console.log(arrayOfValues);
+
+    var cookiesArray = ["doubleChockChip", "whiteMacadamia", "raisin", [2.5, 4.2, 3.5]];
+
+    console.log(cookiesArray[3][0]);
 });
