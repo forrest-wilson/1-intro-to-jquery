@@ -72,4 +72,10 @@ $(document).ready(function() {
     var cookiesArray = ["doubleChockChip", "whiteMacadamia", "raisin", [2.5, 4.2, 3.5]];
 
     console.log(cookiesArray[3][0]);
+    console.dir(cookiesArray.length);
+
+    var aString = "Hello",
+        bString = "world!";
+
+    console.log(aString + " " + bString);
 });
