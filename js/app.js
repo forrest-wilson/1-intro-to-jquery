@@ -118,8 +118,19 @@ $(document).ready(function() {
                     + " years old and live in "
                     + this.location
                     + ".";
+        },
+        box: {
+            height: "200px",
+            width: "200px",
+            color: "blue"
         }
     }
+
+    $("#objectDiv").css({
+        "width": person.box.width,
+        "height": person.box.height,
+        "background-color": person.box.color
+    });
 
     document.getElementById("personDescription").textContent = person.description();
 });
