@@ -102,6 +102,7 @@ $(document).ready(function() {
     // Objects
     console.log(window);
 
+    // person object
     var person = {
         firstName: "Forrest",
         lastName: "Wilson-Jennings",
@@ -126,11 +127,13 @@ $(document).ready(function() {
         }
     }
 
+    // Add css to the #objectDiv
     $("#objectDiv").css({
         "width": person.box.width,
         "height": person.box.height,
         "background-color": person.box.color
     });
 
+    // Print the description() method of person
     document.getElementById("personDescription").textContent = person.description();
 });
