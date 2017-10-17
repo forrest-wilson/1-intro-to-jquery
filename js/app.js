@@ -167,9 +167,17 @@ $(document).ready(function() {
 
     // Functions
 
+    // Function declaration
     function log(message) {
         console.log(message);
     }
 
     log("Hello World!");
+
+    // Function expression
+    var area = function(l, w) {
+        return l * w;
+    }
+
+    console.log(area(50, 10));
 });
