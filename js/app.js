@@ -164,4 +164,12 @@ $(document).ready(function() {
     fruits.pop();
 
     console.log(fruits);
+
+    // Functions
+
+    function log(message) {
+        console.log(message);
+    }
+
+    log("Hello World!");
 });
