@@ -136,4 +136,32 @@ $(document).ready(function() {
 
     // Print the description() method of person
     document.getElementById("personDescription").textContent = person.description();
+
+    // Adds the nationality property to the person object
+    person.nationality = "Kiwi";
+
+    console.log(person.nationality);
+    console.log(person);
+
+    // Deletes the nationality property from the person object
+    // delete person.nationality;
+
+    // Fruits array
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+    // Adds a new item to the END of fruits array
+    fruits.push("Kiwi");
+
+    console.log(fruits);
+
+    // Adds a new element to the START of fruits array
+    fruits.unshift("Passionfruit");
+
+    console.log(fruits);
+
+    // Removes the last item in the array by default.
+    // Use [i] to pop at a defined index
+    fruits.pop();
+
+    console.log(fruits);
 });
