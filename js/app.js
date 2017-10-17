@@ -180,4 +180,75 @@ $(document).ready(function() {
     }
 
     console.log(area(50, 10));
+
+    // Return key word
+    function add(a, b) {
+        return a + b;
+    }
+
+    console.log(add(10, 10));
+
+    function calcArea(width, height) {
+        // Assigns the calculation of width times height to area
+        var area = width * height;
+        
+        // Spits out the value of area
+        return area;
+    }
+
+    var wallOne = calcArea(3, 5);
+    var wallTwo = calcArea(8, 5);
+
+    console.log("Wall one is " + wallOne + "m^2");
+    console.log("Wall two is " + wallTwo + "m^2");
+
+    // Using object properties as function perameters
+    var areaObj = {
+        width: 20,
+        height: 7
+    }
+
+    var objCalc = calcArea(areaObj.width, areaObj.height);
+
+    var objMessage = "Object area is " + objCalc + "m^2";
+    console.log(objMessage);
+
+    // Using array values as function perameters
+    var areaArray = [10, 8];
+
+    var arrayCalc = calcArea(areaArray[0], areaArray[1]);
+
+    var arrayMessage = "Array area is " + arrayCalc + "m^2";
+
+    console.log(arrayMessage);
+
+    // Using arrays in an object as function perameters
+    var someObj = {
+        array: [12, 6]
+    }
+
+    var someObjCalc = calcArea(someObj.array[0], someObj.array[1]);
+
+    var someObjMessage = "Object Array area is " + someObjCalc + "m^2";
+
+    console.log(someObjMessage);
+
+    //
+    // Returning Multiple Values
+    //
+
+    function getSize(width, height, depth) {
+        var area = width * height;
+        var volume = area * depth;
+        var sizes = [area, volume];
+
+        return sizes;
+    }
+
+    var returnedArray = getSize(3, 2, 3);
+
+    var areaOne = returnedArray[0]
+    var volumeOne = returnedArray[1];
+
+    console.log(areaOne + "\n" + volumeOne);
 });
