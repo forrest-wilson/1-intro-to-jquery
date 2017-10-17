@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Local Style Link -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <title>jQuery Events</title>
+</head>
+<body>
+    <section>
+        <h1 class="title">Click Event</h1>
+
+        <h1 class="my-title" id="theId">Hello World</h1>
+        <button id="clickableButton">Click Me</button>
+    </section>
+
+    <h1 class="title">Boxes</h1>
+
+    <section class="container">
+        <article id="box1" class="box">
+            <button>Do Something Cool!</button>
+        </article>
+
+        <article id="box2" class="box">
+            <button>Do Something Else!</button>
+        </article>
+
+        <article id="box3" class="box">
+            <button>Click Me!</button>
+        </article>
+
+        <article id="box4" class="box">
+            <button>Hover over Me</button>
+        </article>
+    </section>
+
+    <!-- jQuery Link -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $("#clickableButton").click(function() {
+                $("#theId").toggle(500);
+            });
+
+            // DAY 2
+
+            $("#box1 button").click(function() {
+                $("#box1").css({
+                    "background-color": "red"
+                });
+            });
+
+            $("#box2 button").click(function() {
+                $("#box2").toggleClass("add-border");
+            });
+
+            $("#box3 button").click(function() {
+                $("#box3").innerHeight(500);
+            });
+
+            $("#box4 button").hover(function() {
+                $(this).css({
+                    "height": "100%",
+                    "width": "100%",
+                    "transform": "none",
+                    "left": "0",
+                    "top": "0"
+                });
+            }, function() {
+                $(this).css({
+                    "height": "50%",
+                    "width": "50%"
+                });
+            });
+        });
+    </script>
+</body>
+</html>

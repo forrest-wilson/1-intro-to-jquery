@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Local Style Link -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <title>jQuery Intro</title>
+</head>
+<body>
+    <!-- DAY 3 -->
+    <section>
+        <h1 class="title">DAY 3</h1>
+
+        <h1 id="cost" class="cost-paragraph"></h1>
+
+        <h2 id="personDescription"></h2>
+    </section>
+
+    <!-- Object -->
+    <section>
+        <h1 class="title">Object</h1>
+
+        <div id="objectDiv"></div>
+    </section>
+
+    <!-- jQuery Link -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Variable declaration
+            var price,
+                quantity,
+                total;
+
+            // Variable assignment
+            price = 5;
+            quantity = 14;
+
+            console.log(typeof price);
+
+            // Math
+            total = price * quantity;
+
+            // Get element and set the text to "$" plus the total
+            var el = document.getElementById("cost");
+            el.textContent = "$" + total;
+
+            // Change the variable data type to object for logging
+            total = {key: "value"}
+
+            // Logs the data type
+            console.log(typeof total);
+        });
+    </script>
+</body>
+</html>
