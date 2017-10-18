@@ -11,10 +11,24 @@
     <title>JS If-Else Statements</title>
 </head>
 <body>
+    <input id="ageCheck" type="text">
+    <button id="button">Check</button>
+
     <!-- jQuery Link -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-        
+        // If else statements
+        document.getElementById("button").onclick = function() {
+            var ageCheck = document.getElementById("ageCheck").value;
+
+            if (ageCheck < 18) {
+                console.log("You're just a child!");
+            } else if (ageCheck < 100) {
+                console.log("Welcome to the adult world! Your life now revolves around taxes!");
+            } else {
+                console.log("Got damb you is old!");
+            }
+        }
     </script>
 </body>
 </html>
