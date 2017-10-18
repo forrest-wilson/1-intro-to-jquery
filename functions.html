@@ -11,6 +11,7 @@
     <title>JS Functions</title>
 </head>
 <body>
+    <h1 id="selfInvokingFunc"></h1>
     <!-- jQuery Link -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script>
@@ -98,6 +99,15 @@
         var volumeOne = returnedArray[1];
 
         console.log(areaOne + "\n" + volumeOne);
+
+        //
+        // Self Invoking Functions
+        //
+
+        (function(a, b) {
+            document.getElementById("selfInvokingFunc").innerHTML = "This has come from a self invoking function!";
+            console.log(a, b);
+        })("fName", "lName");
     </script>
 </body>
 </html>
