@@ -12,6 +12,7 @@
 </head>
 <body>
     <h1 id="selfInvokingFunc"></h1>
+    <h1 id="selfInvokingExp"></h1>
     <!-- jQuery Link -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script>
@@ -95,7 +96,7 @@
 
         var returnedArray = getSize(3, 2, 3);
 
-        var areaOne = returnedArray[0]
+        var areaOne = returnedArray[0];
         var volumeOne = returnedArray[1];
 
         console.log(areaOne + "\n" + volumeOne);
@@ -108,6 +109,14 @@
             document.getElementById("selfInvokingFunc").innerHTML = "This has come from a self invoking function!";
             console.log(a, b);
         })("fName", "lName");
+
+        //
+        // Self Invoking Function Expressions
+        //
+
+        var aFunction = function() {
+            document.getElementById("selfInvokingExp").innerHTML = "This has come from a self invoking function expression!";
+        }();
     </script>
 </body>
 </html>
