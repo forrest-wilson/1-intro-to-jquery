@@ -117,6 +117,39 @@
         var aFunction = function() {
             document.getElementById("selfInvokingExp").innerHTML = "This has come from a self invoking function expression!";
         }();
+
+        // Code checkpoint
+
+        var myFunction = function() {
+            var configObj = {
+                opt1: 123,
+                opt2: 456
+            };
+
+            return configObj.opt1;
+        }();
+
+        log(myFunction);
+
+        // Pt 2
+
+        var configObj;
+
+        // Assigns values to the configObj variable
+        var objFunc = function() {
+            configObj = {
+                opt1: 'abc',
+                opt2: 'def'
+            }
+        }();
+
+        // Returns the opt1 property of the configObj
+        var getOpt1 = function() {
+            return configObj.opt1;
+        }();
+
+        // Logs the output of getOpt1 func
+        log(getOpt1);
     </script>
 </body>
 </html>
