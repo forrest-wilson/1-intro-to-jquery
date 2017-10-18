@@ -13,6 +13,11 @@
 <body>
     <h1 id="selfInvokingFunc"></h1>
     <h1 id="selfInvokingExp"></h1>
+
+    <h2 id="firstName">Forrest</h2>
+    <h2 id="lastName">Wilson-Jennings</h2>
+
+    <h2 id="fullName"></h2>
     <!-- jQuery Link -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script>
@@ -149,7 +154,18 @@
         }();
 
         // Logs the output of getOpt1 func
-        log(getOpt1);
+        console.log(getOpt1);
+
+        // Pt 3
+
+        var fName,
+            lName,
+            getNames = (() => {
+                return [document.getElementById("firstName").innerHTML, document.getElementById("lastName").innerHTML];
+            })(),
+            getFullName = ((names) => {
+                document.getElementById("fullName").innerHTML = "Full Name: " + names[0] + " " + names[1];
+            })(getNames);
     </script>
 </body>
 </html>
