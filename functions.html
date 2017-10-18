@@ -165,6 +165,9 @@
             getFullName = ((names) => {
                 document.getElementById("fullName").innerHTML = "Full Name: " + names[0] + " " + names[1];
             })(getNames);
+
+        // Function expressions can only be invoked AFTER the expression has been written (as all other variables work)
+        // Function declarations can be invoked wherever in the code (BEFORE or AFTER the declaration)
     </script>
 </body>
 </html>
