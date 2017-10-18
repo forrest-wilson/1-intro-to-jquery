@@ -12,9 +12,11 @@
 </head>
 <body>
     <h1 id="text"></h1>
+    <h1 id="output"></h1>
     <!-- jQuery Link -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script>
+        // Switch statements
         var text;
 
         switch (new Date().getDay()) {
@@ -29,6 +31,31 @@
         }
 
         document.getElementById("text").innerHTML = text;
+
+        // New switch statement
+
+        (() => {
+            var randomNumber = Math.floor((Math.random() * 10) + 1),
+            output;
+
+            console.log(randomNumber);
+
+            switch (true) {
+                case randomNumber < 5:
+                    output = randomNumber + " is smaller than 5";
+                    break;
+                case randomNumber == 5:
+                    output = randomNumber + " is the same as 5";
+                    break;
+                case randomNumber > 5:
+                    output = randomNumber + " is bigger than 5";
+                    break;
+                default:
+                    console.log("Something went wrong");
+            }
+
+            document.getElementById("output").innerHTML = output;
+        })();
     </script>
 </body>
 </html>
