@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>JS Objects and Such</title>
+</head>
+<body>
+    <h1 id="selfInvokingFunc"></h1>
+    <h1 id="selfInvokingExp"></h1>
+
+    <h2 id="firstName">First Name</h2>
+    <h2 id="lastName">Last Name</h2>
+
+    <h2 id="fullName"></h2>
+    <script>
+        // Code checkpoint
+
+        var configObj;
+
+        // Assigns values to the configObj variable
+        var objFunc = function() {
+            configObj = {
+                opt1: 'abc',
+                opt2: 'def'
+            }
+        }();
+
+        // Returns the opt1 property of the configObj
+        var getOpt1 = function() {
+            return configObj.opt1;
+        }();
+
+        // Logs the output of getOpt1 func
+        console.log(getOpt1);
+
+        // Declare and execute the getNames and getFullName functions
+        var getNames = (() => {
+                return [document.getElementById("firstName").innerHTML, document.getElementById("lastName").innerHTML];
+            })(),
+            getFullName = ((names) => {
+                document.getElementById("fullName").innerHTML = "Full Name: " + names[0] + " " + names[1];
+            })(getNames);
+
+        // Function expressions can only be invoked AFTER the expression has been written (as all other variables work)
+        // Function declarations can be invoked wherever in the code (BEFORE or AFTER the declaration)
+    </script>
+</body>
+</html>
