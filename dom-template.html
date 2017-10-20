@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Template</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<h1 style="padding-left: 1em;">A List</h1>
+	<p id="para"></p>
+	<ul id="ul">
+		<li class="red">red</li>
+		<li id="another">another</li>
+		<li class="hot">hot number 1</li>
+		<li class="blue">blue</li>
+		<li class="green">green</li>
+		<li id="new">new</li>
+		<li class="hot">hot number 2</li>
+    </ul>
+    
+    <input type="text">
+
+	<script>
+        // This is a DOM query method
+        var elem = document.getElementById("another");
+        var ulPls = document.getElementById("ul");
+
+        var elements = document.getElementsByClassName('hot');
+
+        if (elements.length >= 1) {
+            console.log(elements.length);
+            for (i = 0; i < elements.length; i++) {
+                // Both of these array selectors return the same thing
+                console.dir(elements[i].innerHTML);
+                // console.dir(elements.item(i));
+            }
+        }
+
+        var el = document.getElementById("another");
+        // el.draggable = true;
+        el.id = "anotherOne";
+        console.log(el);
+        console.log(document.getElementById("another"));
+	</script>
+</body>
+</html>
