@@ -11,17 +11,30 @@
     <title>JS For Loops</title>
 </head>
 <body>
-    <section>
-        <h1 id="cost" class="cost-paragraph"></h1>
-    </section>
+    <input id="input" type="text">
+    <button id="add">Add to Array</button>
 
     <!-- jQuery Link -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script>
-        // IIFE
-        (function() {
-            
+        // Example
+        var ourArray = [];
+
+        for (i = 0; i < 5; i++) {
+            ourArray.push(i);
+        }
+
+        // Setup
+        var myArray = [],
+            add = document.getElementById("add");
+
+        add.addEventListener("click", function(e) {
+            myArray.push(document.getElementById("input").value);
+
+            e.preventDefault();
         });
+
+
     </script>
 </body>
 </html>
