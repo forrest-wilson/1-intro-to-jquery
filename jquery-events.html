@@ -38,6 +38,10 @@
         </article>
     </section>
 
+    <section id="new">
+        <p>Press the 'a' key</p>
+    </section>
+
     <!-- jQuery Link -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 
@@ -76,6 +80,38 @@
                     "width": "50%"
                 });
             });
+
+            var x;
+
+            function changecolors() {
+                x = 1;
+                setInterval(change, 1000);
+            }
+
+            function change() {
+                if (x === 1) {
+                    color = "red";
+                    x = 2;
+                } else {
+                    color = "green";
+                    x = 1;
+                }
+
+                document.getElementById("new").style.backgroundColor = color;
+            }
+
+            $(document).keypress(function(e) {
+                console.log(e.keyCode);
+                switch (e.keyCode) {
+                    case 97:
+                        changecolors();
+                        break;
+                    default:
+                        break;
+                }
+            });
+
+
         });
     </script>
 </body>
