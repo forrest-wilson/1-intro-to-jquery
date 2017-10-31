@@ -94,8 +94,15 @@
                 cantCatchMe.style.top = randomNumbers[2] + "%";
                 cantCatchMe.style.bottom = randomNumbers[3] + "%";
 
+                // Increase the counter and set the innerHTML
                 counter++
                 counterEl.innerHTML = "Counter: " + counter;
+
+                // Change the text of the moving box
+                if (counter >= 20) {
+                    cantCatchMe.innerHTML = "How is it taking you this long to catch me?";
+                    cantCatchMe.style.width = "300px";
+                }
             }
 
             // Adds an event listener for hovering the mouse over the div
