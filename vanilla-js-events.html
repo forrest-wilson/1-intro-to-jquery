@@ -48,25 +48,25 @@
             counter = 0,
             minuteCounter = 0,
             firstSecCounter = 0,
-            secondCounter = 0;
+            secondSecCounter = 0;
 
         // Sets up the initial innerHTML text
         counterEl.innerHTML = "Counter: 0";
         timeWastedEl.innerHTML = "Time Wasted: 0:00";
 
         setInterval(function() {
-            if (firstSecCounter == 5 && secondCounter == 9) {
+            if (firstSecCounter == 5 && secondSecCounter == 9) {
                 minuteCounter++;
                 firstSecCounter = 0;
-                secondCounter = 0;
-            } else if (secondCounter >= 9) {
-                secondCounter = 0;
+                secondSecCounter = 0;
+            } else if (secondSecCounter >= 9) {
+                secondSecCounter = 0;
                 firstSecCounter++;
             } else {
-                secondCounter++;
+                secondSecCounter++;
             }
 
-            timeWastedEl.innerHTML = "Time Wasted: " + minuteCounter + ":" + firstSecCounter + secondCounter;
+            timeWastedEl.innerHTML = "Time Wasted: " + minuteCounter + ":" + firstSecCounter + secondSecCounter;
         }, 1000);
 
         // Adds random numbers to an empty array using the Math.random method
