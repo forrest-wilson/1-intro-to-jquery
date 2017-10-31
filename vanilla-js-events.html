@@ -7,32 +7,38 @@
     <title>Vanilla JS Events</title>
 
     <style>
-    .cant-catch-me {
-        position: fixed;
-        height: 50px;
-        width: 200px;
-        text-align: center;
-        line-height: 50px;
-        background-color: lightblue;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        border-radius: 5px;
-    }
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        .cant-catch-me {
+            position: fixed;
+            height: 50px;
+            width: 200px;
+            text-align: center;
+            line-height: 50px;
+            background-color: lightblue;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            border-radius: 5px;
+        }
 
-    .counter {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        margin: 0px;
-    }
+        .counter {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+        }
 
-    .time-wasted {
-        position: absolute;
-        top: 40px;
-        left: 0px;
-        margin: 0px;
-    }
+        .time-wasted {
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            margin: 0px;
+        }
     </style>
 </head>
 <body>
@@ -41,60 +47,60 @@
     <h2 id="timeWasted" class="time-wasted"></h2>
 
     <script>
-    (function() {
-        // Caching a variable object
-        var cantCatchMe = document.getElementById("cantCatchMe"),
-            counterEl = document.getElementById("counter"),
-            timeWastedEl = document.getElementById("timeWasted"),
-            counter = 0,
-            minuteCounter = 0,
-            firstSecCounter = 0,
-            secondSecCounter = 0;
-
-        // Sets up the initial innerHTML text
-        counterEl.innerHTML = "Counter: 0";
-        timeWastedEl.innerHTML = "Time Wasted: 0:00";
-
-        // Runs this function indefinitely every 1000 milliseconds
-        setInterval(function() {
-            if (firstSecCounter == 5 && secondSecCounter == 9) {
-                minuteCounter++;
-                firstSecCounter = 0;
+        (function() {
+            // Caching a variable object
+            var cantCatchMe = document.getElementById("cantCatchMe"),
+                counterEl = document.getElementById("counter"),
+                timeWastedEl = document.getElementById("timeWasted"),
+                counter = 0,
+                minuteCounter = 0,
+                firstSecCounter = 0,
                 secondSecCounter = 0;
-            } else if (secondSecCounter >= 9) {
-                secondSecCounter = 0;
-                firstSecCounter++;
-            } else {
-                secondSecCounter++;
+
+            // Sets up the initial innerHTML text
+            counterEl.innerHTML = "Counter: 0";
+            timeWastedEl.innerHTML = "Time Wasted: 0:00";
+
+            // Runs this function indefinitely every 1000 milliseconds
+            setInterval(function() {
+                if (firstSecCounter == 5 && secondSecCounter == 9) {
+                    minuteCounter++;
+                    firstSecCounter = 0;
+                    secondSecCounter = 0;
+                } else if (secondSecCounter >= 9) {
+                    secondSecCounter = 0;
+                    firstSecCounter++;
+                } else {
+                    secondSecCounter++;
+                }
+
+                // Appends a concatenated string to an element in the HTML
+                timeWastedEl.innerHTML = "Time Wasted: " + minuteCounter + ":" + firstSecCounter + secondSecCounter;
+            }, 1000);
+
+            // Adds random numbers to an empty array using the Math.random method
+            function changeSomeThings() {
+                var randomNumbers = [];
+
+                // Pushes a random number between 1 and 100 to the randomNumbers array
+                for (i = 0; i < 4; i++) {
+                    randomNumbers.push(Math.floor(Math.random() * 100));
+                }
+
+                // Sets the left, right, top, and bottom CSS properties of the 
+                // cantCatchMe object to the random numbers + %
+                cantCatchMe.style.left = randomNumbers[0] + "%";
+                cantCatchMe.style.right = randomNumbers[1] + "%";
+                cantCatchMe.style.top = randomNumbers[2] + "%";
+                cantCatchMe.style.bottom = randomNumbers[3] + "%";
+
+                counter++
+                counterEl.innerHTML = "Counter: " + counter;
             }
 
-            // Appends a concatenated string to an element in the HTML
-            timeWastedEl.innerHTML = "Time Wasted: " + minuteCounter + ":" + firstSecCounter + secondSecCounter;
-        }, 1000);
-
-        // Adds random numbers to an empty array using the Math.random method
-        function changeSomeThings() {
-            var randomNumbers = [];
-
-            // Pushes a random number between 1 and 100 to the randomNumbers array
-            for (i = 0; i < 4; i++) {
-                randomNumbers.push(Math.floor(Math.random() * 100));
-            }
-
-            // Sets the left, right, top, and bottom CSS properties of the 
-            // cantCatchMe object to the random numbers + %
-            cantCatchMe.style.left = randomNumbers[0] + "%";
-            cantCatchMe.style.right = randomNumbers[1] + "%";
-            cantCatchMe.style.top = randomNumbers[2] + "%";
-            cantCatchMe.style.bottom = randomNumbers[3] + "%";
-
-            counter++
-            counterEl.innerHTML = "Counter: " + counter;
-        }
-
-        // Adds an event listener for hovering the mouse over the div
-        cantCatchMe.addEventListener("mouseover", changeSomeThings, false);
-    })();
+            // Adds an event listener for hovering the mouse over the div
+            cantCatchMe.addEventListener("mouseover", changeSomeThings, false);
+        })();
     </script>
 </body>
 </html>
