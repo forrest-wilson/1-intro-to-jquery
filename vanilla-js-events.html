@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vanilla JS Events</title>
+
+    <style>
+    .cant-catch-me {
+        position: fixed;
+        height: 50px;
+        width: 200px;
+        text-align: center;
+        line-height: 50px;
+        background-color: lightblue;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .counter {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin: 0px;
+    }
+
+    .time-wasted {
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        margin: 0px;
+    }
+    </style>
+</head>
+<body>
+    <div id="cantCatchMe" class="cant-catch-me">Bet You Can't Catch Me!</div>
+    <h1 id="counter" class="counter"></h1>
+    <h2 id="timeWasted" class="time-wasted"></h2>
+
+    <script>
+    (function() {
+        // Caching a variable object
+        var cantCatchMe = document.getElementById("cantCatchMe"),
+            counterEl = document.getElementById("counter"),
+            timeWastedEl = document.getElementById("timeWasted"),
+            counter = 0,
+            minuteCounter = 0,
+            firstSecCounter = 0,
+            secondCounter = 0;
+
+        // Sets up the initial innerHTML text
+        counterEl.innerHTML = "Counter: 0";
+        timeWastedEl.innerHTML = "Time Wasted: 0:00";
+
+        setInterval(function() {
+            if (firstSecCounter == 5 && secondCounter == 9) {
+                minuteCounter++;
+                firstSecCounter = 0;
+                secondCounter = 0;
+            } else if (secondCounter >= 9) {
+                secondCounter = 0;
+                firstSecCounter++;
+            } else {
+                secondCounter++;
+            }
+
+            timeWastedEl.innerHTML = "Time Wasted: " + minuteCounter + ":" + firstSecCounter + secondCounter;
+        }, 1000);
+
+        // Adds random numbers to an empty array using the Math.random method
+        function changeSomeThings() {
+            var randomNumbers = [];
+
+            // Pushes a random number between 1 and 100 to the randomNumbers array
+            for (i = 0; i < 4; i++) {
+                randomNumbers.push(Math.floor(Math.random() * 100));
+            }
+
+            // Sets the left, right, top, and bottom CSS properties of the 
+            // cantCatchMe object to the random numbers + %
+            cantCatchMe.style.left = randomNumbers[0] + "%";
+            cantCatchMe.style.right = randomNumbers[1] + "%";
+            cantCatchMe.style.top = randomNumbers[2] + "%";
+            cantCatchMe.style.bottom = randomNumbers[3] + "%";
+
+            counter++
+            counterEl.innerHTML = "Counter: " + counter;
+        }
+
+        // Adds an event listener for hovering the mouse over the div
+        cantCatchMe.addEventListener("mouseover", changeSomeThings, false);
+    })();
+    </script>
+</body>
+</html>
