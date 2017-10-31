@@ -55,6 +55,7 @@
         counterEl.innerHTML = "Counter: 0";
         timeWastedEl.innerHTML = "Time Wasted: 0:00";
 
+        // Runs this function indefinitely every 1000 milliseconds
         setInterval(function() {
             if (firstSecCounter == 5 && secondSecCounter == 9) {
                 minuteCounter++;
@@ -67,6 +68,7 @@
                 secondSecCounter++;
             }
 
+            // Appends a concatenated string to an element in the HTML
             timeWastedEl.innerHTML = "Time Wasted: " + minuteCounter + ":" + firstSecCounter + secondSecCounter;
         }, 1000);
 
