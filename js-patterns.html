@@ -20,6 +20,14 @@
         (function() {
             // Setup my config/cloud object. Used as a kind of 'clipboard' for temporary/persistent data in the global/higher scope
             var config = {};
+            var app = {
+                init: function(a, b, c) {
+                    var ret = a + b + c;
+                    console.log(ret);
+                }
+            }
+
+            app.init(4, 5, 6)
 
             function makeMessage(myMessage) {
                 config.msg = myMessage;
