@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Local Style Link -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <title>JS Patterns</title>
+</head>
+<body>
+
+    <!-- jQuery Link -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        // IIFE
+        (function() {
+            // Setup my config/cloud object. Used as a kind of 'clipboard' for temporary/persistent data in the global/higher scope
+            var config = {};
+
+            function makeMessage(myMessage) {
+                config.msg = myMessage;
+                shoutSomething();
+            }
+
+            makeMessage("Hello");
+
+            function shoutSomething() {
+                alert(config.msg);
+            }
+        })();
+    </script>
+</body>
+</html>
