@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Local Style Link -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>JQ Each Method</title>
+</head>
+<body>
+
+    <!-- jQuery Link -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // First the array
+            var arr = [22,10,15,121,15,44,48,47,55,91,12,10];
+												
+            $.each(arr, function( index, value ) {
+                console.log( index + ": " + value );
+            });
+
+            // We can also use $.each to loop over an object
+            var objA = {
+                "flammable": "inflammable",
+                "duh": "no duh",
+                "really": "yes",
+                "still reading?": "thats a bummer man!"
+            };
+
+            $.each( objA, function( key, value ) {
+                console.log( key + ": " + value );
+            });
+        });
+    </script>
+</body>
+</html>
