@@ -61,5 +61,5 @@
     });
     
     // so the variable newArr contains an updated filtered array of data
-    console.log("Filter results:",newArr);
+    console.log("Filter results:", newArr);
 })();
