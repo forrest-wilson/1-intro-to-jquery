@@ -1,3 +1,4 @@
+// Run in Node.js
 (function() {
     //
     // indexOf() Array Method
