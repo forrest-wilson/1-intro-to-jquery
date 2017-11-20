@@ -43,7 +43,7 @@
         }
     }
 
-    console.log("Filter results:",newArr);
+    console.log("Filter results:", newArr);
 
     //Here we use the filter method
     var arr = [
