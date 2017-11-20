@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Local Style Link -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <title>JS Creating DOM Elements</title>
+</head>
+<body>
+
+    <script>
+        (function() {
+            // Creating an element with vanilla.js
+            var btn = document.createElement("BUTTON");        // Create a button element
+            var t = document.createTextNode("CLICK ME");       // Create a text node
+            btn.appendChild(t);                                
+            // Append the text to button
+            document.body.appendChild(btn);                    // Append button to body
+        })();
+    </script>
+</body>
+</html>
