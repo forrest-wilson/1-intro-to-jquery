@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Local Style Link -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <title>JS Creating DOM Elements jQuery</title>
+</head>
+<body>
+    
+    <!-- jQuery Link -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //Method 1.
+            var $div = $("<div>", {id: "foo", "class": "a"});
+            $("body").append($div);
+
+            //Method 2. 
+            $('body').append(
+            $('<div/>')
+                .attr("id", "newDiv1")
+                .addClass("newDiv purple bloated")
+                .append("<span/>")
+                .text("hello world")
+            );
+
+            //Method 3. 
+            $( "<div><p>Hello</p></div>" ).appendTo( "body" );
+
+            //Method 4. 
+            $('<div/>', {
+                "id": 'foo',
+                "name": 'mainDiv',
+                "class": 'wrapper',
+                "click": function() {
+                jQuery(this).toggleClass("test");
+                }}).appendTo('body');
+        });
+    </script>
+</body>
+</html>
